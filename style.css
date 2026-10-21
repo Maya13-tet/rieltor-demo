@@ -202,3 +202,15 @@ footer{background:var(--ink);color:#B4B0A6;padding:2rem 0 3rem;font-size:.92rem;
   .ln__l{stroke-dashoffset:0}.st,.end,.ln-t{opacity:1}
   html{scroll-behavior:auto}
 }
+
+/* заголовки и подводки по центру */
+h1,h2{text-align:center}
+.lead{margin-left:auto;margin-right:auto;text-align:center}
+.hero__text{text-align:center}
+.hero__who{text-align:center}
+.acts{justify-content:center}
+.filters{justify-content:center}
+.news__head{flex-direction:column;align-items:center;text-align:center}
+.news__head .chips{justify-content:center}
+.news .note{text-align:center;margin-left:auto;margin-right:auto}
+.cat .note,.chat .note{text-align:center;margin-left:auto;margin-right:auto}
