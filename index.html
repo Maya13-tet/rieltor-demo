@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Роман Левин – квартиры в Москве</title>
+<meta name="description" content="Роман Левин, риелтор: подбор и продажа квартир в Москве, проверка документов, сопровождение сделки. Каталог по округам, новости рынка, чат с ботом-помощником. Демо-версия.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="logo__m" aria-hidden="true">М</span>Левин</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#kvartiry">Квартиры</a>
+      <a href="#novosti">Новости рынка</a>
+      <a href="#obo-mne">Обо мне</a>
+    </nav>
+    <a class="btn btn--sm" href="#chat" data-open-chat>Спросить бота</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="hero__who">Роман Левин, риелтор. Москва, покупка и продажа квартир</p>
+      <h1>Квартира в Москве начинается с линии метро</h1>
+      <p class="lead">Выберите округ на схеме, и я покажу, что там продаётся и сколько стоит метр. Каждую квартиру перед показом проверяю по документам, а цену обсуждаю с продавцом сам.</p>
+      <div class="acts">
+        <a class="btn" href="#kvartiry">Смотреть квартиры</a>
+        <a class="btn btn--line" href="#chat" data-open-chat>Написать боту</a>
+      </div>
+    </div>
+
+    <div class="hero__map">
+      <svg id="metro" viewBox="0 0 520 520" role="group" aria-label="Схема округов Москвы в виде линий метро"></svg>
+      <div class="area" id="area" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="kvartiry" class="cat">
+  <div class="wrap">
+    <h2>Квартиры в продаже</h2>
+    <p class="lead">Девятнадцать вариантов на вторичном рынке и в новостройках. Цвет полосы на карточке показывает линию округа на схеме.</p>
+
+    <div class="filters" id="filters">
+      <div class="filters__row">
+        <span class="filters__lab" id="lab-r">Комнат</span>
+        <div class="chips" id="rooms" role="group" aria-labelledby="lab-r"></div>
+      </div>
+      <div class="filters__row">
+        <label class="filters__lab" for="budget">Бюджет: <b id="budgetOut">любой</b></label>
+        <input type="range" id="budget" min="10" max="80" step="1" value="80">
+      </div>
+      <div class="filters__row">
+        <label class="filters__lab" for="sort">Порядок</label>
+        <select id="sort">
+          <option value="price">Сначала дешевле</option>
+          <option value="priceDesc">Сначала дороже</option>
+          <option value="sqm">По цене за метр</option>
+          <option value="area">Большие сначала</option>
+        </select>
+      </div>
+      <div class="filters__row filters__now" id="now"></div>
+    </div>
+
+    <ul class="grid" id="grid"></ul>
+    <p class="empty" id="empty" hidden>Под такие условия сейчас ничего нет. Увеличьте бюджет или сбросьте округ, либо напишите боту: он подскажет, что близко по параметрам.</p>
+  </div>
+</section>
+
+<section id="novosti" class="news">
+  <div class="wrap">
+    <div class="news__head">
+      <div>
+        <h2>Новости рынка недвижимости</h2>
+        <p class="lead">Подборка на 22 октября 2026 из открытых источников. К каждой новости добавляю, что она значит для покупателя.</p>
+      </div>
+      <div class="chips chips--dark" id="newsTabs" role="group" aria-label="Темы новостей"></div>
+    </div>
+    <div class="news__body" id="newsBody"></div>
+    <p class="note">Цифры в новостях взяты у изданий и аналитиков, у разных источников они расходятся. Перед решением сверяйте по ссылке и у Росреестра.</p>
+  </div>
+</section>
+
+<section id="obo-mne" class="about">
+  <div class="wrap about__grid">
+    <figure class="about__ph">
+      <img src="assets/roman.webp" alt="Роман Левин, риелтор" width="720" height="960" loading="lazy">
+    </figure>
+    <div>
+      <h2>Роман Левин</h2>
+      <p class="lead">Двенадцать лет в московской недвижимости. Работаю один и веду каждого клиента лично: от первого звонка до ключей.</p>
+      <ol class="how">
+        <li><b>Подбор</b><span>Уточняю бюджет, район и сроки. Присылаю короткий список, а не сорок ссылок.</span></li>
+        <li><b>Показы</b><span>Езжу на просмотры вместе с вами и показываю то, что на фото не видно: шум, соседей, дом.</span></li>
+        <li><b>Проверка</b><span>Запрашиваю выписку из ЕГРН, смотрю историю квартиры, прописанных и собственников.</span></li>
+        <li><b>Сделка</b><span>Договор, расчёты через банк, регистрация в Росреестре. Вы подписываете, остальное на мне.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="chat" class="chat">
+  <div class="wrap chat__grid">
+    <div class="chat__info">
+      <h2>Спросите бота, он отвечает сразу</h2>
+      <p class="lead">Бот подберёт квартиры под ваш бюджет, посчитает ипотеку, объяснит, как проходит сделка, и запишет на просмотр. Когда нужен живой человек, передаст разговор мне.</p>
+      <ul class="can">
+        <li>Подбор квартир за три вопроса</li>
+        <li>Расчёт платежа: рыночная и семейная ипотека</li>
+        <li>Запись на просмотр на удобный день</li>
+        <li>Ответы про документы, налоги и стоимость услуг</li>
+      </ul>
+      <p class="note">Это демонстрация: бот работает на готовых сценариях прямо в браузере, переписка нигде не сохраняется. В рабочей версии его подключают к Telegram и к вашей CRM.</p>
+    </div>
+    <div class="chatbox" aria-label="Чат с ботом">
+      <div class="chatbox__bar">
+        <span class="chatbox__ava" aria-hidden="true">М</span>
+        <div><b>Помощник Романа Левина</b><small><i class="dot"></i>на связи</small></div>
+      </div>
+      <div class="chatbox__log" id="log" role="log" aria-live="polite"></div>
+      <div class="chatbox__quick" id="quick"></div>
+      <form class="chatbox__form" id="cform" autocomplete="off">
+        <label class="sr" for="cin">Ваше сообщение</label>
+        <input id="cin" placeholder="Напишите вопрос или выберите кнопку" maxlength="300">
+        <button class="btn btn--sm" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<a class="fab" id="fab" href="#chat" data-open-chat hidden>Чат с ботом</a>
+
+<footer>
+  <div class="wrap">Роман Левин, Москва. Это демонстрационная версия: имя, квартиры, цены и контакты вымышлены, портрет создан ИИ, чат работает на готовых сценариях и ничего не сохраняет. Новости взяты из открытых источников и даны со ссылками.</div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
